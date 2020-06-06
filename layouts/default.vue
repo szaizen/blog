@@ -1,8 +1,30 @@
 <template>
   <div>
-    <nuxt />
+    <TheHeader />
+
+    <div>
+      <div>
+        <nuxt />
+      </div>
+      <div>
+        <TheSidebar />
+      </div>
+    </div>
   </div>
 </template>
+
+<script lang="ts">
+import Vue from 'vue';
+import TheHeader from '../components/common/TheHeader';
+import TheSidebar from '../components/common/TheSidebar';
+
+export default Vue.extend({
+  components: {
+    TheHeader,
+    TheSidebar
+  }
+})
+</script>
 
 <style>
 html {
