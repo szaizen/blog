@@ -2,51 +2,59 @@
   <div>
     <TheHeader />
 
-    <div>
-      <div>
+    <div class="body">
+      <div class="content">
         <nuxt />
       </div>
-      <div>
+      <div class="sidebar">
         <TheSidebar />
       </div>
     </div>
+
+    <TheFooter />
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue';
-import TheHeader from '../components/common/TheHeader';
-import TheSidebar from '../components/common/TheSidebar';
+<script>
+import Vue from 'vue'
+import TheHeader from '~/components/common/TheHeader'
+import TheFooter from '~/components/common/TheFooter'
+import TheSidebar from '~/components/common/TheSidebar'
 
 export default Vue.extend({
   components: {
     TheHeader,
+    TheFooter,
     TheSidebar
   }
 })
 </script>
 
-<style>
-html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
+<style lang="scss" scoped>
+
+.body {
+  max-width: $pc-width;
+  margin: auto;
+  @include flex(space-between);
+  align-items: flex-start;
 }
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  margin: 0;
+.content {
+  @include mq(desktop) {
+    width: 610px;
+    flex-shrink: 0;
+  }
+  
 }
 
-.button--green {
+.sidebar {
+  @include mq(desktop) {
+    width: 290px;
+    flex-shrink: 0;
+  }
+}
+
+/* .button--green {
   display: inline-block;
   border-radius: 4px;
   border: 1px solid #3b8070;
@@ -73,5 +81,5 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
-}
+} */
 </style>

@@ -1,17 +1,7 @@
 <template>
   <div class="container">
     <div>
-      <ul>
-        <li v-for="(article, index) in articles" :key="index">
-          {{ article.createdAt }}
-          {{ article.title }}
-          {{ article.category.name }}
-          {{ article.Image.url }}
-
-          <nuxt-link :to="'/article/' + article.id">link</nuxt-link>
-
-        </li>
-      </ul>
+      <ArticleCard v-for="(article, index) in articles" :key="index" :article="article" :index="index" />
     </div>
   </div>
 </template>
@@ -19,6 +9,7 @@
 <script>
 import Vue from 'vue'
 import axios from 'axios'
+import ArticleCard from '../components/card/ArticleCard';
 
 export default Vue.extend({
 
@@ -26,6 +17,10 @@ export default Vue.extend({
     return {
       articles: null
     }
+  },
+
+  components: {
+    ArticleCard
   },
 
   async asyncData() {

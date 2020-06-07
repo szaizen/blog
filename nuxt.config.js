@@ -23,7 +23,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['element-ui/lib/theme-chalk/index.css'],
+  css: ['element-ui/lib/theme-chalk/index.css','~/assets/scss/style.scss'],
   /*
    ** Plugins to load before mounting the App
    */
@@ -35,8 +35,13 @@ export default {
     '@nuxt/typescript-build',
     // Doc: https://github.com/nuxt-community/stylelint-module
     '@nuxtjs/stylelint-module',
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    '@nuxtjs/style-resources',
+    '@nuxtjs/global-components'
   ],
+  styleResources: {
+    scss: ['~/assets/scss/style.scss']
+  },
   /*
    ** Nuxt.js modules
    */

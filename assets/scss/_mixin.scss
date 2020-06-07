@@ -1,0 +1,28 @@
+@mixin flex($justify-content) {
+  display: flex;
+  align-items: center;
+  justify-content: $justify-content;
+}
+
+@mixin mq($media-width) {
+  @if $media-width == mobile {
+    @media only screen and (max-width: 767px) {
+      @content;
+    }
+  }
+  @else if $media-width == desktop {
+    @media only screen and (min-width: 768px) {
+      @content;
+    }
+  }
+}
+
+@mixin contentWidth() {
+  @media only screen and (min-width: 768px) {
+    width: 940px;
+    margin: auto;
+  }
+  @media only screen and (max-width: 767px) {
+    margin: 0 20px;
+  }
+}
