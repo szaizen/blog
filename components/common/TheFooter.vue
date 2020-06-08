@@ -5,6 +5,10 @@
 </template>
 
 <style lang="scss" scoped>
-
-  
+.footer {
+  background-color: #cfcfcf;
+  padding: 20px;
+  @include flex(center);
+  margin-top: 40px;
+}
 </style>

@@ -49,8 +49,11 @@ export default Vue.extend({
 
 .sidebar {
   @include mq(desktop) {
+    top: 0;
     width: 290px;
     flex-shrink: 0;
+    height: 100%;
+    position: sticky;
   }
 }
 

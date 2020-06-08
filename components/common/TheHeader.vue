@@ -1,7 +1,9 @@
 <template>
   <div class="header">
     <div class="inner">
-      <img class="logo" src="~/assets/image/icon.png" alt="エンジニアのひとりごと">
+      <nuxt-link to="/">
+        <img class="logo" src="~/assets/image/icon.png" alt="エンジニアのひとりごと">
+      </nuxt-link>
     </div>
   </div>
 </template>
@@ -9,6 +11,8 @@
 
   .header {
     padding: 20px 0;
+    border-bottom: 1px solid #dfdfdf;
+    margin-bottom: 21px;
   }
 
   .inner {
