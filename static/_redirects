@@ -1,0 +1,4 @@
++ /game/*  https://api.deckup.cards/game/:splat  200
++ /common/*  https://api.deckup.cards/common/:splat  200
++ /caches/*  https://cache.deckup.cards/caches/:splat  200
+/*    /index.html   200
